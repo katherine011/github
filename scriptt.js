@@ -18,25 +18,22 @@ const darkmode = document.getElementById("darkmode");
 const darkText = document.getElementById("dark");
 
 const body = document.body;
-const container = document.querySelector(".container");
 
 let isDarkMode = false;
 
-moon.addEventListener("click", () => {
+darkmode.addEventListener("click", () => {
   isDarkMode = !isDarkMode;
 
-  body.classList.toggle("darkMode", isDarkMode);
+  console.log(isDarkMode);
 
-  moon.src = isDarkMode ? "./img/sun.png" : "./img/moon (2).png";
+  document.body.classList.toggle("darkMode", isDarkMode);
+
+  const mode = isDarkMode ? "LIGHT" : "DARK";
+
+  darkText.textContent = mode;
+
+  moon.src = isDarkMode ? "./img/sun.png" : "./img/moon (1).png";
   moon.alt = isDarkMode ? "sun" : "moon";
-
-  darkText.textContent = isDarkMode ? "LIGHT" : "DARK";
-});
-
-const darkModeButton = document.getElementById("darkmode");
-
-darkModeButton.addEventListener("click", () => {
-  document.body.classList.toggle("darkMode");
 });
 
 form.addEventListener("submit", (e) => {

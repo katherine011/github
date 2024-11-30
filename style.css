@@ -10,6 +10,8 @@ body {
   width: 100%;
   height: 100vh;
   font-family: "Space Mono";
+  background-color: rgba(246, 248, 255, 1);
+  color: rgba(34, 39, 49, 1);
 }
 
 .container {
@@ -293,24 +295,26 @@ a {
   text-decoration: none;
 }
 
-body.darkMode {
+/* body.darkMode {
   background-color: rgba(20, 29, 47, 1);
   color: white;
-}
+} */
 
-body.darkMode.container {
+/* body.darkMode.container {
   background-color: rgba(20, 29, 47, 1);
   color: white;
-}
+} */
 
-body.darkMode.search {
+/* body.darkMode.search {
   background-color: rgba(30, 42, 71, 1);
   color: white;
-}
-body.darkMode.github {
+} */
+
+/* body.darkMode.github {
   background-color: rgba(30, 42, 71, 1);
   color: white;
-}
+} */
+
 body.darkMode.whole {
   background-color: rgba(30, 42, 71, 1);
   color: white;
@@ -319,9 +323,10 @@ body.darkMode.whole {
 body.darkMode#text {
   color: #fff;
 }
-body.darkMode header h1 {
+/* body.darkMode header h1 {
   color: #fff;
-}
+} */
+
 body.darkMode.bruh h1 p {
   color: #fff;
 }
