@@ -1,24 +1,43 @@
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const github = document.getElementById("github");
-const header = document.getElementById("header");
-const info = document.getElementById("info");
 const name = document.getElementById("name");
 const username = document.getElementById("username");
 const joined = document.getElementById("joined");
 const text = document.getElementById("text");
-const dataElement = document.getElementById("data");
-const textCont = document.getElementById("textCont");
-const numbContent = document.getElementById("numbContent");
-const moreInfo = document.getElementById("moreInfo");
+const repos = document.getElementById("repos");
+const followers = document.getElementById("followers");
+const following = document.getElementById("following");
 const locationText = document.getElementById("location");
 const link = document.getElementById("link");
 const aplication = document.getElementById("aplication");
 const avatarD = document.getElementById("avatarD");
 const avatarM = document.getElementById("avatarM");
-const repos = document.getElementById("repos");
-const followers = document.getElementById("followers");
-const following = document.getElementById("following");
+const moon = document.getElementById("moon");
+const darkmode = document.getElementById("darkmode");
+const darkText = document.getElementById("dark");
+
+const body = document.body;
+const container = document.querySelector(".container");
+
+let isDarkMode = false;
+
+moon.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+
+  body.classList.toggle("darkMode", isDarkMode);
+
+  moon.src = isDarkMode ? "./img/sun.png" : "./img/moon (2).png";
+  moon.alt = isDarkMode ? "sun" : "moon";
+
+  darkText.textContent = isDarkMode ? "LIGHT" : "DARK";
+});
+
+const darkModeButton = document.getElementById("darkmode");
+
+darkModeButton.addEventListener("click", () => {
+  document.body.classList.toggle("darkMode");
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -27,92 +46,73 @@ form.addEventListener("submit", (e) => {
 
 async function getdata() {
   try {
-    let username = input.value;
-    if (username === null) {
+    const username = input.value.trim();
+    if (!username) {
       addError("No results");
       return;
     }
 
-    const fetchdata = await fetch(`https://api.github.com/users/${username}`);
-    const data = await fetchdata.json();
-    console.log(data);
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    if (!response.ok) {
+      addError("No results");
+      return;
+    }
+
+    const data = await response.json();
     scriptToHtml(data);
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching data:", error);
     addError("No results");
   }
 }
 
 function scriptToHtml(data) {
   removeError();
-  repos.textContent = data.public_repos;
-  followers.textContent = data.followers;
-  following.textContent = data.following;
 
-  if (data.avatar_url === null) {
-    avatarD.src = `./img/images (1).jpg`;
-  } else {
-    avatarD.src = data.avatar_url;
-  }
+  repos.textContent = data.public_repos ?? 0;
+  followers.textContent = data.followers ?? 0;
+  following.textContent = data.following ?? 0;
 
-  if (data.avatar_url === null) {
-    avatarM.src = `./img/images (1).jpg`;
-  } else {
-    avatarM.src = data.avatar_url;
-  }
+  avatarD.src = data.avatar_url ?? `./img/images (1).jpg`;
+  avatarM.src = data.avatar_url ?? `./img/images (1).jpg`;
 
-  if (data.name === null) {
-    name.textContent = "No name";
-  } else {
-    name.textContent = data.name;
-  }
+  name.textContent = data.name ?? "No name";
+  username.textContent = data.login ? `@${data.login}` : "not available";
 
-  if (data.login === null) {
-    username.textContent = "not available";
-  } else {
-    username.textContent = `@${data.login}`;
-  }
+  joined.textContent = data.created_at
+    ? new Date(data.created_at).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      })
+    : "not available";
 
-  if (data.created_at === null) {
-    joined.textContent = "not available";
-  } else {
-    joined.textContent = new Date(data.created_at);
-  }
+  text.textContent = data.bio ?? "This profile has no bio";
+  locationText.textContent = data.location ?? "not available";
+  aplication.textContent = data.twitter_username ?? "not available";
 
-  if (data.bio === null) {
-    text.textContent = "This profile has no bio";
-  } else {
-    text.textContent = data.bio;
-  }
-
-  if (data.location === null) {
-    locationText.textContent = "not available";
-  } else {
-    locationText.textContent = data.location;
-  }
-
-  if (data.twitter_username === null) {
-    aplication.textContent = "not available";
-  } else {
-    aplication.textContent = data.twitter_username;
-  }
-
-  if (data.blog === null) {
-    link.textContent = "not available";
-  } else {
+  if (data.blog) {
     link.href = data.blog;
+    link.textContent = data.blog;
+  } else {
+    link.href = "#";
+    link.textContent = "not available";
   }
 }
 
 function addError(message) {
-  let span = document.createElement("span");
+  removeError(); // წაშალე ძველი ერორი
+  const parent = input.parentElement;
+
+  const span = document.createElement("span");
   span.textContent = message;
   span.classList.add("span");
-  span.textContent = "No results";
-  const parent = input.parentElement;
-  parentElement.appendChild(span);
+  parent.appendChild(span); // ერორის შეტყობინება მშობელში
 }
 
 function removeError() {
-  if (errorSpan) errorSpan.remove();
+  const errorSpan = input.parentElement.querySelector(".span");
+  if (errorSpan) {
+    errorSpan.remove(); // წაშალე არსებული ერორი
+  }
 }

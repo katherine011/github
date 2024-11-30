@@ -6,14 +6,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="darkMode">
     <div class="container">
       <header>
         <h1>devfinder</h1>
-        <button class="Btn">
-          DARK
-          <img src="./img/moon.png" alt="moon icon" />
-        </button>
+        <div id="darkmode">
+          <h1 id="dark">DARK</h1>
+          <img src="./img/moon (2).png" alt="moon icon" id="moon" />
+        </div>
       </header>
       <form id="form" class="search">
         <div class="two">
@@ -28,21 +28,21 @@
         <button type="submit" id="Btn">Search</button>
       </form>
       <div class="github" id="github">
-        <img src="./img/Oval (11).png" alt="kitty" class="kitty" id="avatarD" />
+        <img src="./img/Oval (12).png" alt="kitty" class="kitty" id="avatarD" />
         <div class="whole">
           <div id="header">
             <img
-              src="./img/Oval (11).png"
+              src="./img/Oval (12).png"
               alt="kitty pfp"
               class="kitty1"
               id="avatarM"
             />
             <div id="info">
-              <div>
+              <div class="bruh">
                 <h1 id="name">The Octocat</h1>
-                <p id="username">@octocat</p>
+                <p id="joined">Joined 25 Jan 2011</p>
               </div>
-              <p id="joined">Joined 25 Jan 2011</p>
+              <p id="username">@octocat</p>
             </div>
           </div>
           <p id="textD">This profile has no bio</p>
@@ -90,6 +90,6 @@
       </div>
     </div>
 
-    <script src="./scriptt.js"></script>
+    <script src="./scriptt.js" defer></script>
   </body>
 </html>

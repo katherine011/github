@@ -93,6 +93,10 @@ input {
   line-height: 25px;
 }
 
+input::placeholder {
+  color: #c4c4c4;
+}
+
 .span {
   color: #f74646;
   font-family: "Space Mono";
@@ -100,6 +104,7 @@ input {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: block;
 }
 
 .two {
@@ -288,6 +293,74 @@ a {
   text-decoration: none;
 }
 
+body.darkMode {
+  background-color: rgba(20, 29, 47, 1);
+  color: white;
+}
+
+body.darkMode.container {
+  background-color: rgba(20, 29, 47, 1);
+  color: white;
+}
+
+body.darkMode.search {
+  background-color: rgba(30, 42, 71, 1);
+  color: white;
+}
+body.darkMode.github {
+  background-color: rgba(30, 42, 71, 1);
+  color: white;
+}
+body.darkMode.whole {
+  background-color: rgba(30, 42, 71, 1);
+  color: white;
+}
+
+body.darkMode#text {
+  color: #fff;
+}
+body.darkMode header h1 {
+  color: #fff;
+}
+body.darkMode.bruh h1 p {
+  color: #fff;
+}
+body.darkModeinput {
+  color: #fff;
+}
+body.darkMode#textCont {
+  color: #fff;
+}
+body.darkMode#numbContent {
+  color: #fff;
+}
+body.darkMode.last p a {
+  color: #fff;
+}
+
+body.darkMode#dataElement {
+  background-color: rgba(20, 29, 47, 1);
+  color: white;
+}
+
+#darkmode {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#dark {
+  color: #4b6a9b;
+  text-align: right;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
 @media (max-width: 900px) and (min-width: 650px) {
   .container {
     padding: 90px;
@@ -406,8 +479,15 @@ a {
 
   #info {
     padding-left: 0;
+    flex-direction: column;
+  }
+
+  .bruh {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: row;
-    gap: 140px;
   }
 
   .kitty {
@@ -416,6 +496,7 @@ a {
     height: 140px;
     padding-top: 30px;
     padding-left: 10px;
+    border-radius: 30%;
   }
 
   .kitty1 {
