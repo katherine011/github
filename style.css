@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Heebo:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Space Mono";
+}
+
+.container {
+  width: 100%;
+  background-color: rgba(246, 248, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  color: #222731;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Btn {
+  width: 80px;
+  color: #4b6a9b;
+  text-align: right;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: none;
+  background-color: rgba(246, 248, 255, 1);
+}
+
+.Btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.search {
+  width: 100%;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(254, 254, 254, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  padding: 10px;
+  margin-bottom: 22px;
+}
+
+.search img {
+  width: 26px;
+  height: 20px;
+  padding-left: 5px;
+}
+
+input {
+  width: 190px;
+  outline: none;
+  border: none;
+  background-color: rgba(254, 254, 254, 1);
+  color: #4b6a9b;
+  font-family: "Space Mono";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#Btn {
+  width: 84px;
+  height: 46px;
+  border-radius: 10px;
+  background-color: #0079ff;
+  color: #fff;
+  text-align: center;
+  font-family: "Space Mono";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+}
+
+.github .whole {
+  width: 100%;
+  border-radius: 15px;
+  background: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 25px;
+  gap: 25px;
+}
+
+.github {
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+}
+
+.kitty {
+  display: none;
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+#info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+#name {
+  color: #2b3442;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#username {
+  color: #0079ff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#joined {
+  color: #697c9a;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#text {
+  color: #4b6a9b;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+#textD {
+  display: none;
+}
+
+#dataElement {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #f6f8ff;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+#textCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+#textCont p {
+  color: #4b6a9b;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#numbContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+#numbContent p {
+  color: #2b3442;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+#Repos {
+  margin-left: -20px;
+}
+
+#moreInfo {
+  width: 100%;
+  /* height: 100px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.last {
+  height: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.last p {
+  color: #4b6a9b;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#location {
+  padding-left: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: #4b6a9b;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) and (min-width: 650px) {
+  .container {
+    padding: 90px;
+  }
+
+  .search {
+    height: 70px;
+    padding-left: 20px;
+  }
+
+  .search img {
+    width: 30px;
+    height: 24px;
+  }
+
+  #Btn {
+    height: 106px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  input {
+    width: 270px;
+    font-size: 18px;
+    padding-left: 3px;
+  }
+
+  #name {
+    font-size: 26px;
+  }
+
+  #username {
+    font-size: 16px;
+  }
+
+  #joined {
+    font-size: 15px;
+  }
+
+  #text {
+    font-size: 15px;
+  }
+
+  #textCont p {
+    font-size: 13px;
+  }
+
+  #numbContent p {
+    font-size: 22px;
+  }
+
+  .last p {
+    font-size: 15px;
+  }
+
+  #moreInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 80px;
+  }
+
+  #header img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #header {
+    gap: 14px;
+  }
+
+  .github {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1800px) and (min-width: 901px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(246, 248, 255, 1);
+    overflow: hidden;
+  }
+
+  .container {
+    width: 730px;
+    height: 900px;
+    padding: 0;
+  }
+
+  .github {
+    width: 100%;
+    border-radius: 15px;
+    background: #fefefe;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    padding: 25px;
+  }
+
+  .whole {
+    display: flex;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  #info {
+    padding-left: 0;
+    flex-direction: row;
+    gap: 140px;
+  }
+
+  .kitty {
+    display: block;
+    width: 150px;
+    height: 140px;
+    padding-top: 30px;
+    padding-left: 10px;
+  }
+
+  .kitty1 {
+    display: none;
+  }
+
+  #moreInfo {
+    flex-direction: row;
+    gap: 110px;
+    margin-top: 10px;
+  }
+
+  #text {
+    display: none;
+  }
+
+  #textD {
+    width: 100%;
+    display: block;
+    color: #4b6a9b;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: start;
+  }
+
+  .search {
+    height: 70px;
+    padding-left: 20px;
+  }
+
+  .search img {
+    width: 30px;
+    height: 24px;
+  }
+
+  #Btn {
+    height: 106px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  input {
+    width: 270px;
+    font-size: 18px;
+    padding-left: 3px;
+  }
+
+  #name {
+    font-size: 26px;
+  }
+
+  #username {
+    font-size: 16px;
+  }
+
+  #joined {
+    font-size: 15px;
+  }
+
+  #text {
+    font-size: 15px;
+  }
+
+  #textCont p {
+    font-size: 13px;
+  }
+
+  #numbContent p {
+    font-size: 22px;
+  }
+
+  .last p {
+    font-size: 15px;
+  }
+}
