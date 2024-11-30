@@ -93,6 +93,15 @@ input {
   line-height: 25px;
 }
 
+.span {
+  color: #f74646;
+  font-family: "Space Mono";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .two {
   display: flex;
   align-items: center;
@@ -197,7 +206,7 @@ input {
   flex-direction: column;
   border-radius: 10px;
   background: #f6f8ff;
-  gap: 10px;
+  gap: 5px;
   padding-top: 10px;
 }
 
@@ -235,7 +244,7 @@ input {
   text-transform: uppercase;
 }
 
-#Repos {
+#repos {
   margin-left: -20px;
 }
 
@@ -304,6 +313,7 @@ a {
     width: 270px;
     font-size: 18px;
     padding-left: 3px;
+    background-color: white;
   }
 
   #name {
@@ -481,5 +491,9 @@ a {
 
   .last p {
     font-size: 15px;
+  }
+
+  #repos {
+    margin-left: -35px;
   }
 }

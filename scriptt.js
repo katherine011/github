@@ -11,7 +11,7 @@ const dataElement = document.getElementById("data");
 const textCont = document.getElementById("textCont");
 const numbContent = document.getElementById("numbContent");
 const moreInfo = document.getElementById("moreInfo");
-const location = document.getElementById("location");
+const locationText = document.getElementById("location");
 const link = document.getElementById("link");
 const aplication = document.getElementById("aplication");
 const avatarD = document.getElementById("avatarD");
@@ -28,24 +28,41 @@ form.addEventListener("submit", (e) => {
 async function getdata() {
   try {
     let username = input.value;
+    if (username === null) {
+      addError("No results");
+      return;
+    }
+
     const fetchdata = await fetch(`https://api.github.com/users/${username}`);
     const data = await fetchdata.json();
     console.log(data);
     scriptToHtml(data);
   } catch (error) {
     console.log(error);
+    addError("No results");
   }
 }
 
 function scriptToHtml(data) {
-  avatarM.src = data.avatar_url || `./img/images.jpg`;
-  avatarD.src = data.avatar_url || `./img/images.jpg`;
+  removeError();
   repos.textContent = data.public_repos;
   followers.textContent = data.followers;
   following.textContent = data.following;
 
+  if (data.avatar_url === null) {
+    avatarD.src = `./img/images (1).jpg`;
+  } else {
+    avatarD.src = data.avatar_url;
+  }
+
+  if (data.avatar_url === null) {
+    avatarM.src = `./img/images (1).jpg`;
+  } else {
+    avatarM.src = data.avatar_url;
+  }
+
   if (data.name === null) {
-    name.textContent = "This profile has no name";
+    name.textContent = "No name";
   } else {
     name.textContent = data.name;
   }
@@ -59,7 +76,7 @@ function scriptToHtml(data) {
   if (data.created_at === null) {
     joined.textContent = "not available";
   } else {
-    joined.textContent = data.created_at;
+    joined.textContent = new Date(data.created_at);
   }
 
   if (data.bio === null) {
@@ -69,9 +86,9 @@ function scriptToHtml(data) {
   }
 
   if (data.location === null) {
-    location.textContent = "not available";
+    locationText.textContent = "not available";
   } else {
-    location.textContent = data.location;
+    locationText.textContent = data.location;
   }
 
   if (data.twitter_username === null) {
@@ -85,4 +102,17 @@ function scriptToHtml(data) {
   } else {
     link.href = data.blog;
   }
+}
+
+function addError(message) {
+  let span = document.createElement("span");
+  span.textContent = message;
+  span.classList.add("span");
+  span.textContent = "No results";
+  const parent = input.parentElement;
+  parentElement.appendChild(span);
+}
+
+function removeError() {
+  if (errorSpan) errorSpan.remove();
 }
