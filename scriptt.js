@@ -16,10 +16,15 @@ const avatarM = document.getElementById("avatarM");
 const moon = document.getElementById("moon");
 const darkmode = document.getElementById("darkmode");
 const darkText = document.getElementById("dark");
+const whole = document.querySelector(".whole");
+const datael = document.getElementById("dataElement");
+const container = document.querySelector(".container");
+const search = document.querySelector(".search");
+const devfinder = document.getElementById("devfinder");
 
 const body = document.body;
 
-let isDarkMode = false;
+let isDarkMode = true;
 
 darkmode.addEventListener("click", () => {
   isDarkMode = !isDarkMode;
@@ -28,12 +33,21 @@ darkmode.addEventListener("click", () => {
 
   document.body.classList.toggle("darkMode", isDarkMode);
 
-  const mode = isDarkMode ? "LIGHT" : "DARK";
+  const mode = isDarkMode ? "DARK" : "LIGHT";
 
   darkText.textContent = mode;
 
-  moon.src = isDarkMode ? "./img/sun.png" : "./img/moon (1).png";
+  moon.src = isDarkMode ? "./img/moon (2).png" : "./img/sun.png";
   moon.alt = isDarkMode ? "sun" : "moon";
+
+  devfinder.style.color = isDarkMode ? "#222731" : "white";
+  github.style.backgroundColor = isDarkMode ? "white" : "#1E2A47";
+  whole.style.backgroundColor = isDarkMode ? "white" : "#1E2A47";
+  datael.style.backgroundColor = isDarkMode ? "white" : "#141D2F";
+  document.body.style.backgroundColor = isDarkMode ? "white" : "#141D2F";
+  container.style.backgroundColor = isDarkMode ? "white" : "#141D2F";
+  search.style.backgroundColor = isDarkMode ? "white" : "#141D2F";
+  input.style.backgroundColor = isDarkMode ? "white" : "#141D2F";
 });
 
 form.addEventListener("submit", (e) => {
@@ -98,18 +112,18 @@ function scriptToHtml(data) {
 }
 
 function addError(message) {
-  removeError(); // წაშალე ძველი ერორი
+  removeError();
   const parent = input.parentElement;
 
   const span = document.createElement("span");
   span.textContent = message;
   span.classList.add("span");
-  parent.appendChild(span); // ერორის შეტყობინება მშობელში
+  parent.appendChild(span);
 }
 
 function removeError() {
   const errorSpan = input.parentElement.querySelector(".span");
   if (errorSpan) {
-    errorSpan.remove(); // წაშალე არსებული ერორი
+    errorSpan.remove();
   }
 }

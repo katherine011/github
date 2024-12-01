@@ -295,59 +295,6 @@ a {
   text-decoration: none;
 }
 
-/* body.darkMode {
-  background-color: rgba(20, 29, 47, 1);
-  color: white;
-} */
-
-/* body.darkMode.container {
-  background-color: rgba(20, 29, 47, 1);
-  color: white;
-} */
-
-/* body.darkMode.search {
-  background-color: rgba(30, 42, 71, 1);
-  color: white;
-} */
-
-/* body.darkMode.github {
-  background-color: rgba(30, 42, 71, 1);
-  color: white;
-} */
-
-body.darkMode.whole {
-  background-color: rgba(30, 42, 71, 1);
-  color: white;
-}
-
-body.darkMode#text {
-  color: #fff;
-}
-/* body.darkMode header h1 {
-  color: #fff;
-} */
-
-body.darkMode.bruh h1 p {
-  color: #fff;
-}
-body.darkModeinput {
-  color: #fff;
-}
-body.darkMode#textCont {
-  color: #fff;
-}
-body.darkMode#numbContent {
-  color: #fff;
-}
-body.darkMode.last p a {
-  color: #fff;
-}
-
-body.darkMode#dataElement {
-  background-color: rgba(20, 29, 47, 1);
-  color: white;
-}
-
 #darkmode {
   width: 80px;
   display: flex;
